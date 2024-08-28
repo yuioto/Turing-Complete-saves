@@ -1,0 +1,39 @@
+# crates = 40       tab(5)
+# mouse = 33        tab(5)
+# nil = 0           pass(1)
+# fragments = 239   pass(1)
+# wall = 1          l/r(0/2)
+# door = 3          l/r(0/2)
+
+# robot
+
+const rmv3 8
+const robot_wait 3
+const robot_tab 5
+
+# main
+
+5
+cp | 0*rmv3 | out
+1
+cp | 0*rmv3 | out
+
+label main
+
+star # if is 0, jump addr
+in_to_reg3 # check 0
+reg3_not0
+
+label loop
+robot_wait
+cp | 0*rmv3 | out
+
+in_to_reg3
+loop
+reg3_is_zero # goto reg0
+
+label star
+robot_tab
+cp | 0*rmv3 | out
+main
+reg3_always

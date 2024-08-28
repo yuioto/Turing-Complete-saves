@@ -1,0 +1,19 @@
+label start
+
+# set 1 to reg2
+1
+reg0_to_reg2
+
+# start try from max(0xff)
+0xff
+reg0_to_reg4
+label for
+reg4_to_out
+
+# reg4 - 1
+reg4_to_reg1
+sub
+reg3_to_reg4
+
+for
+set_pc

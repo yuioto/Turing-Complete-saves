@@ -1,0 +1,16 @@
+# only need get after 2 number
+
+# 0b00000011 &
+# if 0 and 0, = 0
+# if 0 and 1, = 0
+# if 1 and 0, = 0
+# if 1 and 1, = 1
+# so, and will save after 2 number
+
+0b00000011
+reg0_to_reg1
+in_to_reg2
+and
+
+# now, reg3 save after 2 number
+reg3_to_out

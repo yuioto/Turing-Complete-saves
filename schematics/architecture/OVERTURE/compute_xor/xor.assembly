@@ -1,0 +1,18 @@
+const regf 8
+
+# get input
+cp | in | reg1
+cp | in | reg2
+
+nand
+cp | reg3*regf | reg4
+
+or
+cp | reg3*regf | reg5
+
+cp | reg4*regf | reg1
+cp | reg5*regf | reg2
+and
+
+# output
+cp | reg3*8 | out

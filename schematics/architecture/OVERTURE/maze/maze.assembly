@@ -1,0 +1,42 @@
+const advance 1
+const left 0
+const right 2
+const interaction 4
+
+const regf 8
+
+const door 3
+
+label start
+
+advance
+cp | reg0 | out
+left
+cp | reg0 | out
+
+label r
+cp | in | reg3  # if in = 0(not wall)
+ia
+reg3_is_zero    # jump to interaction
+
+# check door
+door
+cp | reg0 | reg2
+cp | in | reg1
+sub              # if reg1 - reg2 = 0
+ia
+reg3_is_zero     # jump to ia
+
+label wall
+right
+cp | reg0 | out # go right
+cp | in | reg3  # if in != 0
+r
+reg3_not0       # jump to r
+
+label ia
+interaction
+cp | reg0 | out
+
+start
+reg3_always

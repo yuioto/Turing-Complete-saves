@@ -1,0 +1,16 @@
+# get 2 * input * pi
+
+# 2 * input
+in_to_reg1
+in_to_reg2
+add
+
+# pi = 3
+reg3_to_reg1 # 2 * input -> reg1
+reg3_to_reg2 # 2 * input -> reg2
+add          # 2(pi - 1) * 2 * input
+reg3_to_reg1 # add -> reg1
+add
+
+# 2 * input * pi
+reg3_to_out
